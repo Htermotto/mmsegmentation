@@ -62,6 +62,7 @@ class MultiLevelNeck(nn.Module):
                 xavier_init(m, distribution='uniform')
 
     def forward(self, inputs):
+        print(f'NECK INPUTS type: {type(inputs)}, len: {len(inputs)}')
         assert len(inputs) == len(self.in_channels)
         inputs = [
             lateral_conv(inputs[i])
