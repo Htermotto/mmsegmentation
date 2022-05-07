@@ -6,7 +6,7 @@ model = dict(
         type='MobileViT',
         image_size=((1024,512)),
         dims=[64, 80, 96],
-        channels=[16, 16, 24, 24, 48, 48, 64, 64, 80, 80, 320],
+        channels=[16, 16, 24, 24, 48, 48, 64, 64, 80, 80, 256],
         num_classes=19,
         pretrained_path='/content/mmsegmentation/pretrained_weights/deeplabv3_mobilevit_xxs.pt',
     ),
@@ -17,7 +17,7 @@ model = dict(
     #     scales=[4, 2, 1, 0.5]),
     decode_head=dict(
         type='ASPPHead',
-        in_channels=320,
+        in_channels=256,
         in_index=3,
         channels=256,
         dilations=(6,12,18),
@@ -29,7 +29,7 @@ model = dict(
             type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0)),
     auxiliary_head=dict(
         type='FCNHead',
-        in_channels=320,
+        in_channels=256,
         in_index=2,
         channels=256,
         num_convs=1,
