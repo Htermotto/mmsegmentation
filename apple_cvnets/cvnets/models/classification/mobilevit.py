@@ -16,7 +16,7 @@ from ...layers import ConvLayer, LinearLayer, GlobalPool, Dropout, SeparableConv
 from ...modules import InvertedResidual, MobileViTBlock
 
 
-@register_cls_models("mobilevit")
+# @register_cls_models("mobilevit")
 class MobileViT(BaseEncoder):
     """
         MobileViT: https://arxiv.org/abs/2110.02178?context=cs.LG
