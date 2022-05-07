@@ -241,8 +241,8 @@ class MobileViT(nn.Module):
         return x
 
     def init_weights(self, pretrained_path=None):
-        print(f'IN INIT WEIGHTS: {pretrained_path}, {self.pretrained_path}')
-        model_loaded = torch.load(self.pretrained_path)
+        print(f'IN INIT WEIGHTS: {pretrained_path}')
+        model_loaded = torch.load(pretrained_path)
         loaded_weights = list(model_loaded.values())
         self_model = self.state_dict()
         for i,key  in enumerate(self_model):
