@@ -19,8 +19,8 @@ class MaxPool2d(nn.MaxPool2d):
         input = self.forward(input)
         return input, 0.0, 0.0
 
-    def __repr__(self):
-        return '{}(kernel_size={}, stride={})'.format(self.__class__.__name__, self.kernel_size, self.stride)
+    # def __repr__(self):
+    #     return '{}(kernel_size={}, stride={})'.format(self.__class__.__name__, self.kernel_size, self.stride)
 
 
 class AvgPool2d(nn.AvgPool2d):

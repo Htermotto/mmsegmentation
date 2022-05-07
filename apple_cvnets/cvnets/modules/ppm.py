@@ -74,11 +74,11 @@ class PPM(BaseModule):
         res, p, m = module_profile(module=self.fusion, x=res)
         return res, params + p, macs + m
 
-    def __repr__(self):
-        return "{}(in_channels={}, out_channels={}, pool_sizes={}, inner_channels={})".format(
-            self.__class__.__name__,
-            self.in_channels,
-            self.out_channels,
-            self.pool_sizes,
-            self.inner_channels
-        )
+    # def __repr__(self):
+    #     return "{}(in_channels={}, out_channels={}, pool_sizes={}, inner_channels={})".format(
+    #         self.__class__.__name__,
+    #         self.in_channels,
+    #         self.out_channels,
+    #         self.pool_sizes,
+    #         self.inner_channels
+    #     )

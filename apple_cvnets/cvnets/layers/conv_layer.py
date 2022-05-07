@@ -242,17 +242,17 @@ class TransposeConvLayer(BaseLayer):
     def forward(self, x: Tensor) -> Tensor:
         return self.block(x)
 
-    def __repr__(self):
-        repr_str = self.block[0].__repr__()
-        repr_str = repr_str[:-1]
+    # def __repr__(self):
+    #     repr_str = self.block[0].__repr__()
+    #     repr_str = repr_str[:-1]
 
-        if self.norm_name is not None:
-            repr_str += ', normalization={}'.format(self.norm_name)
+    #     if self.norm_name is not None:
+    #         repr_str += ', normalization={}'.format(self.norm_name)
 
-        if self.act_name is not None:
-            repr_str += ', activation={}'.format(self.act_name)
-        repr_str += ')'
-        return repr_str
+    #     if self.act_name is not None:
+    #         repr_str += ', activation={}'.format(self.act_name)
+    #     repr_str += ')'
+    #     return repr_str
 
     def profile_module(self, input: Tensor) -> (Tensor, float, float):
         if input.dim() != 4:
@@ -323,6 +323,6 @@ class NormActLayer(BaseLayer):
         macs = 0.0
         return input, params, macs
 
-    def __repr__(self):
-        repr_str = '{}(normalization={}, activation={})'.format(self.__class__.__name__, self.norm_type, self.act_type)
-        return repr_str
+    # def __repr__(self):
+    #     repr_str = '{}(normalization={}, activation={})'.format(self.__class__.__name__, self.norm_type, self.act_type)
+    #     return repr_str

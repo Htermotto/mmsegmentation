@@ -80,14 +80,14 @@ class ASPP(BaseModule):
         macs += m
         return out, params, macs
 
-    def __repr__(self):
-        return "{}(in_channels={}, out_channels={}, atrous_rates={}, is_aspp_sep={})".format(
-            self.__class__.__name__,
-            self.in_channels,
-            self.out_channels,
-            self.atrous_rates,
-            self.is_sep_conv,
-        )
+    # def __repr__(self):
+    #     return "{}(in_channels={}, out_channels={}, atrous_rates={}, is_aspp_sep={})".format(
+    #         self.__class__.__name__,
+    #         self.in_channels,
+    #         self.out_channels,
+    #         self.atrous_rates,
+    #         self.is_sep_conv,
+    #     )
 
 
 class ASPPConv(ConvLayer):
@@ -153,9 +153,9 @@ class ASPPPooling(BaseLayer):
         out = F.interpolate(out, size=input.shape[-2:], mode="bilinear", align_corners=False)
         return out, params, macs
 
-    def __repr__(self):
-        return "{}(in_channels={}, out_channels={})".format(
-            self.__class__.__name__,
-            self.in_channels,
-            self.out_channels
-        )
+    # def __repr__(self):
+    #     return "{}(in_channels={}, out_channels={})".format(
+    #         self.__class__.__name__,
+    #         self.in_channels,
+    #         self.out_channels
+    #     )

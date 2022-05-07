@@ -39,5 +39,5 @@ class BaseCriteria(nn.Module):
 
         return class_wts.to(device=target.device)
 
-    def __repr__(self):
-        return '{}'.format(self.__class__.__name__)
+    # def __repr__(self):
+    #     return '{}'.format(self.__class__.__name__)

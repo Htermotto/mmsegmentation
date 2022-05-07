@@ -54,20 +54,20 @@ class SSDHead(BaseModule):
 
         self.reset_parameters()
 
-    def __repr__(self):
-        repr_str = "{}(in_channels={}, n_anchors={}, n_classes={}, n_coordinates={}, kernel_size={}".format(
-            self.__class__.__name__,
-            self.in_channel,
-            self.n_anchors,
-            self.n_classes,
-            self.n_coordinates,
-            self.k_size
-        )
-        if self.proj_layer is not None:
-            repr_str += ", proj=True, proj_channels={}".format(self.proj_channels)
+    # def __repr__(self):
+    #     repr_str = "{}(in_channels={}, n_anchors={}, n_classes={}, n_coordinates={}, kernel_size={}".format(
+    #         self.__class__.__name__,
+    #         self.in_channel,
+    #         self.n_anchors,
+    #         self.n_classes,
+    #         self.n_coordinates,
+    #         self.k_size
+    #     )
+    #     if self.proj_layer is not None:
+    #         repr_str += ", proj=True, proj_channels={}".format(self.proj_channels)
 
-        repr_str += ")"
-        return repr_str
+    #     repr_str += ")"
+    #     return repr_str
 
     def reset_parameters(self):
         for layer in self.modules():

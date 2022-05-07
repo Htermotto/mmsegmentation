@@ -181,16 +181,16 @@ class GroupLinear(BaseLayer):
     def forward(self, x: Tensor) -> Tensor:
         return self._glt_transform(x)
 
-    def __repr__(self):
-        repr_str = '{}(in_features={}, out_features={}, groups={}, bias={}, shuffle={})'.format(
-            self.__class__.__name__,
-            self.in_features,
-            self.out_features,
-            self.n_groups,
-            True if self.bias is not None else False,
-            self.feature_shuffle
-        )
-        return repr_str
+    # def __repr__(self):
+    #     repr_str = '{}(in_features={}, out_features={}, groups={}, bias={}, shuffle={})'.format(
+    #         self.__class__.__name__,
+    #         self.in_features,
+    #         self.out_features,
+    #         self.n_groups,
+    #         True if self.bias is not None else False,
+    #         self.feature_shuffle
+    #     )
+    #     return repr_str
 
     def profile_module(self, input: Tensor) -> (Tensor, float, float):
 

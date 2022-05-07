@@ -55,10 +55,10 @@ class SqueezeExcitation(BaseModule):
         _, params, macs = module_profile(module=self.se_layer, x=input)
         return input, params, macs
 
-    def __repr__(self):
-        return '{}(in_channels={}, squeeze_factor={}, scale_fn={})'.format(
-            self.__class__.__name__,
-            self.in_channels,
-            self.squeeze_factor,
-            self.scale_fn
-        )
+    # def __repr__(self):
+    #     return '{}(in_channels={}, squeeze_factor={}, scale_fn={})'.format(
+    #         self.__class__.__name__,
+    #         self.in_channels,
+    #         self.squeeze_factor,
+    #         self.scale_fn
+    #     )

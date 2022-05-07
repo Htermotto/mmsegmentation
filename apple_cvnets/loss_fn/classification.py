@@ -43,6 +43,6 @@ class ClassificationLoss(BaseCriteria):
         parser = LabelSmoothing.add_arguments(parser=parser)
         return parser
 
-    def __repr__(self):
-        return self.criteria.__repr__()
+    # def __repr__(self):
+    #     return self.criteria.__repr__()
 

@@ -72,10 +72,10 @@ class FPModule(BaseModule):
         res, p, m = module_profile(module=self.fusion, x=res)
         return res, params + p, macs + m
 
-    def __repr__(self):
-        return "{}(in_channels={}, out_channels={}, scales={})".format(
-            self.__class__.__name__,
-            self.in_channels,
-            self.out_channels,
-            self.scales
-        )
+    # def __repr__(self):
+    #     return "{}(in_channels={}, out_channels={}, scales={})".format(
+    #         self.__class__.__name__,
+    #         self.in_channels,
+    #         self.out_channels,
+    #         self.scales
+    #     )

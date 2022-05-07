@@ -75,17 +75,17 @@ class InvertedResidualSE(BaseModule):
     def profile_module(self, input: Tensor) -> (Tensor, float, float):
         return module_profile(module=self.block, x=input)
 
-    def __repr__(self) -> str:
-        return '{}(in_channels={}, out_channels={}, stride={}, exp={}, dilation={}, use_hs={}, use_se={})'.format(
-            self.__class__.__name__,
-            self.in_channels,
-            self.out_channels,
-            self.stride,
-            self.exp,
-            self.dilation,
-            self.use_hs,
-            self.use_se
-        )
+    # def __repr__(self) -> str:
+    #     return '{}(in_channels={}, out_channels={}, stride={}, exp={}, dilation={}, use_hs={}, use_se={})'.format(
+    #         self.__class__.__name__,
+    #         self.in_channels,
+    #         self.out_channels,
+    #         self.stride,
+    #         self.exp,
+    #         self.dilation,
+    #         self.use_hs,
+    #         self.use_se
+    #     )
 
 
 class InvertedResidual(BaseModule):
@@ -138,11 +138,11 @@ class InvertedResidual(BaseModule):
     def profile_module(self, input: Tensor) -> (Tensor, float, float):
         return module_profile(module=self.block, x=input)
 
-    def __repr__(self) -> str:
-        return '{}(in_channels={}, out_channels={}, stride={}, exp={}, dilation={})'.format(
-            self.__class__.__name__,
-            self.in_channels,
-            self.out_channels,
-            self.stride,
-            self.exp, self.dilation
-        )
+    # def __repr__(self) -> str:
+    #     return '{}(in_channels={}, out_channels={}, stride={}, exp={}, dilation={})'.format(
+    #         self.__class__.__name__,
+    #         self.in_channels,
+    #         self.out_channels,
+    #         self.stride,
+    #         self.exp, self.dilation
+    #     )
