@@ -44,16 +44,16 @@ class SeparableConv(BaseLayer):
         self.kernel_size = kernel_size
         self.dilation = dilation
 
-    def __repr__(self):
-        repr_str = "{}(in_channels={}, out_channels={}, kernel_size={}, stride={}, dilation={})".format(
-            self.__class__.__name__,
-            self.in_channels,
-            self.out_channels,
-            self.kernel_size,
-            self.stride,
-            self.dilation
-        )
-        return repr_str
+    # def __repr__(self):
+    #     repr_str = "{}(in_channels={}, out_channels={}, kernel_size={}, stride={}, dilation={})".format(
+    #         self.__class__.__name__,
+    #         self.in_channels,
+    #         self.out_channels,
+    #         self.kernel_size,
+    #         self.stride,
+    #         self.dilation
+    #     )
+    #     return repr_str
 
     def forward(self, x: Tensor) -> Tensor:
         x = self.dw_conv(x)

@@ -97,14 +97,14 @@ class AdjustBatchNormMomentum(object):
                 if isinstance(m, (nn.BatchNorm2d, nn.SyncBatchNorm)) and m.training:
                     m.momentum = curr_momentum
 
-    def __repr__(self):
-        return "{}(\n\t " \
-               "iteration_based={} " \
-               "\n\t inital_momentum={} " \
-               "\n\t final_momentum={} " \
-               "\n\t anneal_method={} " \
-               "\n)".format(self.__class__.__name__,
-                            self.is_iteration_based,
-                            self.momentum,
-                            self.min_momentum,
-                            self.anneal_method)
+    # def __repr__(self):
+    #     return "{}(\n\t " \
+    #            "iteration_based={} " \
+    #            "\n\t inital_momentum={} " \
+    #            "\n\t final_momentum={} " \
+    #            "\n\t anneal_method={} " \
+    #            "\n)".format(self.__class__.__name__,
+    #                         self.is_iteration_based,
+    #                         self.momentum,
+    #                         self.min_momentum,
+    #                         self.anneal_method)

@@ -122,18 +122,6 @@ class ConvLayer(BaseLayer):
     def forward(self, x: Tensor) -> Tensor:
         return self.block(x)
 
-    def __repr__(self):
-        repr_str = self.block[0].__repr__()
-        repr_str = repr_str[:-1]
-
-        if self.norm_name is not None:
-            repr_str += ', normalization={}'.format(self.norm_name)
-
-        if self.act_name is not None:
-            repr_str += ', activation={}'.format(self.act_name)
-        repr_str += ', bias={})'.format(self.bias)
-        return repr_str
-
     def profile_module(self, input: Tensor) -> (Tensor, float, float):
         if input.dim() != 4:
             logger.error(

@@ -58,13 +58,13 @@ class LinearLayer(BaseLayer):
                 x += self.bias
         return x
 
-    def __repr__(self):
-        repr_str = "{}(in_features={}, out_features={}, bias={})".format(
-            self.__class__.__name__, self.in_features,
-            self.out_features,
-            True if self.bias is not None else False
-        )
-        return repr_str
+    # def __repr__(self):
+    #     repr_str = "{}(in_features={}, out_features={}, bias={})".format(
+    #         self.__class__.__name__, self.in_features,
+    #         self.out_features,
+    #         True if self.bias is not None else False
+    #     )
+    #     return repr_str
 
     def profile_module(self, input: Tensor) -> (Tensor, float, float):
         out_size = list(input.shape)

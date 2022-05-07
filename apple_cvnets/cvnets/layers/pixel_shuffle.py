@@ -14,5 +14,5 @@ class PixelShuffle(nn.PixelShuffle):
         input = self.forward(input)
         return input, 0.0, 0.0
 
-    def __repr__(self):
-        return '{}(upscale_factor={})'.format(self.__class__.__name__, self.upscale_factor)
+    # def __repr__(self):
+    #     return '{}(upscale_factor={})'.format(self.__class__.__name__, self.upscale_factor)

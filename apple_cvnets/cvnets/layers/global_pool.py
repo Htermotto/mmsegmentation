@@ -54,6 +54,3 @@ class GlobalPool(BaseLayer):
     def profile_module(self, input: Tensor) -> (Tensor, float, float):
         input = self.forward(input)
         return input, 0.0, 0.0
-
-    def __repr__(self):
-        return '{}(type={})'.format(self.__class__.__name__, self.pool_type)

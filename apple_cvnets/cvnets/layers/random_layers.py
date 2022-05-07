@@ -43,9 +43,9 @@ class RandomApply(BaseLayer):
             macs += m
         return x, params, macs
 
-    def __repr__(self):
-        format_string = self.__class__.__name__ + ' (apply_k (N={})={}, '.format(len(self._modules), self.keep_k)
-        for idx, layer in self._modules.items():
-            format_string += '\n\t {}'.format(layer)
-        format_string += '\n)'
-        return format_string
+    # def __repr__(self):
+    #     format_string = self.__class__.__name__ + ' (apply_k (N={})={}, '.format(len(self._modules), self.keep_k)
+    #     for idx, layer in self._modules.items():
+    #         format_string += '\n\t {}'.format(layer)
+    #     format_string += '\n)'
+    #     return format_string

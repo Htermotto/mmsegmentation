@@ -37,5 +37,5 @@ class PositionalEncoding(BaseLayer):
     def profile_module(self, input: Tensor) -> (Tensor, float, float):
         return input, 0.0, 0.0
 
-    def __repr__(self):
-        return "{}(dropout={})".format(self.__class__.__name__, self.dropout.p)
+    # def __repr__(self):
+    #     return "{}(dropout={})".format(self.__class__.__name__, self.dropout.p)
