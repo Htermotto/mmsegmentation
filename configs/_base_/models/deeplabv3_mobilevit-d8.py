@@ -8,6 +8,7 @@ model = dict(
         dims=[64, 80, 96],
         channels=[16, 16, 24, 24, 48, 48, 64, 64, 80, 80, 320],
         num_classes=1000,
+        pretrained_path='pretrained_weights/deeplabv3_mobilevit_xxs.pt',
     ),
     neck=dict(
         type='MultiLevelNeck',

@@ -185,8 +185,10 @@ class MobileViTBlock(nn.Module):
 
 @BACKBONES.register_module(force=True)
 class MobileViT(nn.Module):
-    def __init__(self, image_size, dims, channels, num_classes, expansion=4, kernel_size=3, patch_size=(2, 2)):
+    def __init__(self, image_size, dims, channels, num_classes, expansion=4, kernel_size=3, patch_size=(2, 2), pretrained_path=None):
         super().__init__()
+        self.pretrained_path = pretrained_path
+
         ih, iw = image_size
         ph, pw = patch_size
         assert ih % ph == 0 and iw % pw == 0
@@ -239,17 +241,14 @@ class MobileViT(nn.Module):
         return x
 
     def init_weights(self, pretrained_path=None):
-
-        model_loaded = torch.load(pretrained_path)
+        print(f'IN INIT WEIGHTS: {pretrained_path}, {self.pretrained_path}')
+        model_loaded = torch.load(self.pretrained_path)
         loaded_weights = list(model_loaded.values())
         self_model = self.state_dict()
         for i,key  in enumerate(self_model):
           self_model[key] = loaded_weights[i]
         self.load_state_dict(self_model)
         print("ITS ALIVE")
-        
-
-
 
 
 def mobilevit_xxs():
