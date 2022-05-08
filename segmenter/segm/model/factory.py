@@ -17,6 +17,8 @@ from segm.model.decoder import MaskTransformer
 from segm.model.segmenter import Segmenter
 import segm.utils.torch as ptu
 
+# from mmseg.models.backbones.mobilevit import MobileViT
+
 
 @register_model
 def vit_base_patch8_384(pretrained=False, **kwargs):
@@ -64,6 +66,7 @@ def create_vit(model_cfg):
         model_cfg["image_size"][0],
         model_cfg["image_size"][1],
     )
+
     model = VisionTransformer(**model_cfg)
     if backbone == "vit_base_patch8_384":
         path = os.path.expandvars("$TORCH_HOME/hub/checkpoints/vit_base_patch8_384.pth")
@@ -72,6 +75,8 @@ def create_vit(model_cfg):
         model.load_state_dict(filtered_dict, strict=True)
     elif "deit" in backbone:
         load_pretrained(model, default_cfg, filter_fn=checkpoint_filter_fn)
+    # elif backbone == "mobilevit":
+    #     model = MobileViT(**model_cfg)
     else:
         load_custom_pretrained(model, default_cfg)
 
