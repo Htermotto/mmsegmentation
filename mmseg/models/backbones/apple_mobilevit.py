@@ -20,9 +20,10 @@ class MobileViT(BaseEncoder):
     """
     def __init__(self, opts, *args, **kwargs) -> None:
         # Hack to be lazy with passing in args:
-        parser = argparse.ArgumentParser()
-        parser = MobileViT.add_arguments(parser)
-        opts = parser.parse_args(['--model.classification.mit.mode', 'xx_small'])
+        # parser = argparse.ArgumentParser()
+        # parser = MobileViT.add_arguments(parser)
+        # TODO: ADD config file path to xxs config.
+        # opts = parser.parse_args(['--model.classification.mit.mode', 'xx_small'])
 
         num_classes = getattr(opts, "model.classification.n_classes", 1000)
         classifier_dropout = getattr(opts, "model.classification.classifier_dropout", 0.2)
