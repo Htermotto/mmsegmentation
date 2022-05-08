@@ -11,9 +11,10 @@ from cvnets.models.classification.base_cls import BaseEncoder
 from cvnets.models.classification.config.mobilevit import get_configuration
 from cvnets.layers import ConvLayer, LinearLayer, GlobalPool, Dropout, SeparableConv
 from cvnets.modules import InvertedResidual, MobileViTBlock
+from apple_cvnets.options.opts import get_training_arguments 
 
 
-@BACKBONES.register_module(name='AppleMobileViT', force=True)
+# @BACKBONES.register_module(name='AppleMobileViT', force=True)
 class MobileViT(BaseEncoder):
     """
         MobileViT: https://arxiv.org/abs/2110.02178?context=cs.LG
@@ -23,6 +24,7 @@ class MobileViT(BaseEncoder):
         # parser = argparse.ArgumentParser()
         # parser = MobileViT.add_arguments(parser)
         # TODO: ADD config file path to xxs config.
+        # parser = get_training_arguments(False)
         # opts = parser.parse_args(['--model.classification.mit.mode', 'xx_small'])
 
         num_classes = getattr(opts, "model.classification.n_classes", 1000)
